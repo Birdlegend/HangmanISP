@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    text-align: center;
+    font-family: consolas, monospaced;
+    font-size: 40px;
+}
+
+button {
+    font-family: consolas, monospaced;
+    font-size: 80px;
+    text-align: left;
+}
