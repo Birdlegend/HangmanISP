@@ -6,6 +6,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route("/help/")
+def help():
+    return render_template('help.html')
+
 @app.route("/singleplayer/")
 def singleplayer():
     return render_template('singleplayer.html')
