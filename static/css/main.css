@@ -88,3 +88,17 @@ button:active {
   margin-left: -80%;
   margin-top: -25%;
 }
+
+#image {
+    position: absolute;
+    display: block;
+    margin-left: 38%;
+    margin-top: 0%;
+}
+
+#link {
+    position: absolute;
+    text-align: center;
+    margin-left: -19%;
+    margin-top: 0%;
+}
