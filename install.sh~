@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cp -r static templates hangman.py
+
+cd ~/www
+
+chmod -R a+rX .
