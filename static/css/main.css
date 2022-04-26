@@ -102,3 +102,10 @@ button:active {
     margin-left: -19%;
     margin-top: 0%;
 }
+
+td {
+    padding: 10px;
+    background-color: rgb(242, 157, 157);
+    width: 1em;
+    border-radius: 15px
+}
