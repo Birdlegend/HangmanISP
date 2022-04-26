@@ -24,16 +24,16 @@ getJSON("https://www.wordgamedb.com/api/v1/words/random").then(data => {
     console.log(`I wish I had that many letters: ${numLetters}`);
 })
 
-const wordbank = ["grim", "valor", "pogchamp"];
+//const wordbank = ["grim", "valor", "pogchamp"];
 
-const word = wordbank[Math.floor(Math.random() * wordbank.length)]
-console.log(word);
+//const word = wordbank[Math.floor(Math.random() * wordbank.length)]
+//console.log(word);
 
-setTimeout(() => {
-    var sTable = document.getElementById("wordTable");
-    for (i = 0; i < word.length; i++) {
-	var wordCell = sTable.rows[0].insertCell(word[i])
-	wordCell.setAttribute("contenteditable", "true")
-	wordCell.setAttribute("onkeypress", "return (this.innerText.length <= 0)")
-    }
-}, "1")
+//setTimeout(() => {
+//    var sTable = document.getElementById("wordTable");
+//    for (i = 0; i < word.length; i++) {
+//	var wordCell = sTable.rows[0].insertCell(word[i])
+//	wordCell.setAttribute("contenteditable", "true")
+//	wordCell.setAttribute("onkeypress", "return (this.innerText.length <= 0)")
+//    }
+//}, "1")
