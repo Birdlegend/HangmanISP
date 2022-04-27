@@ -24,16 +24,22 @@ getJSON("https://www.wordgamedb.com/api/v1/words/random").then(data => {
     console.log(`I wish I had that many letters: ${numLetters}`);
 })
 
-//const wordbank = ["grim", "valor", "pogchamp"];
-
-//const word = wordbank[Math.floor(Math.random() * wordbank.length)]
-//console.log(word);
-
-//setTimeout(() => {
-//    var sTable = document.getElementById("wordTable");
-//    for (i = 0; i < word.length; i++) {
-//	var wordCell = sTable.rows[0].insertCell(word[i])
-//	wordCell.setAttribute("contenteditable", "true")
-//	wordCell.setAttribute("onkeypress", "return (this.innerText.length <= 0)")
-//    }
-//}, "1")
+window.onload = function() {
+var aTable = document.getElementById("alphaTable");
+    var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    for (i = 0; i < 13; i++) {
+        var alpha1Cell = aTable.rows[0].insertCell(alphabet[12 - i]);
+        alpha1Cell.innerHTML = alphabet[12 - i]
+        var alpha2Cell = aTable.rows[1].insertCell(alphabet[25 - i]);
+        alpha2Cell.innerHTML = alphabet[25 - i]
+        alpha1Cell.setAttribute("id", "alphaCell");
+        alpha2Cell.setAttribute("id", "alphaCell");
+    }
+setTimeout(() => {
+	var wTable = document.getElementById("hangTable");
+	for (i = 0; i < word.length; i++) {
+		var wordCell = wTable.rows[0].insertCell(word[i]);
+		wordCell.setAttribute("id", "hangCell");
+    }
+}, "250");
+}

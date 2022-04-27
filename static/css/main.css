@@ -103,9 +103,32 @@ button:active {
     margin-top: 0%;
 }
 
-td {
+#hangTable {
+    margin-left: 10%;
+    transform: translateY(-30%);
+}
+
+#hangCell {
     padding: 10px;
     background-color: rgb(242, 157, 157);
     width: 1em;
+    height: 80px;
+    border: 4px solid rgb(161, 104, 104);
     border-radius: 15px
+}
+
+#alphaTable {
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(20%);
+}
+
+#alphaCell {
+    font-size: 40px;
+    padding: 4px;
+    background-color: rgb(242, 157, 157);
+    width: 1em;
+    height: 50px;
+    border: 2px solid rgb(161, 104, 104);
+    border-radius: 10px;
 }
