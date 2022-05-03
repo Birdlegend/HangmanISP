@@ -20,7 +20,7 @@ getJSON("https://www.wordgamedb.com/api/v1/words/random").then(data => {
     numLetters = data.numLetters;
     console.log(`look at this word: ${word}`);
     console.log(`thats quite the id: ${id}`);
-    console.log(`that's really some category: ${category}`);
+    console.log(`thats really some category: ${category}`);
     console.log(`I wish I had that many letters: ${numLetters}`);
 })
 
@@ -33,7 +33,9 @@ var aTable = document.getElementById("alphaTable");
         var alpha2Cell = aTable.rows[1].insertCell(alphabet[25 - i]);
         alpha2Cell.innerHTML = alphabet[25 - i]
         alpha1Cell.setAttribute("id", "alphaCell");
+        alpha1Cell.setAttribute("onclick", "letterSelection(this.innerHTML)");
         alpha2Cell.setAttribute("id", "alphaCell");
+        alpha2Cell.setAttribute("onclick", "letterSelection(this.innerHTML)");
     }
 setTimeout(() => {
 	var wTable = document.getElementById("hangTable");
@@ -41,5 +43,16 @@ setTimeout(() => {
 		var wordCell = wTable.rows[0].insertCell(word[i]);
 		wordCell.setAttribute("id", "hangCell");
     }
-}, "250");
+}, "300");
+}
+
+function letterSelection(letter) {
+    var wTable = document.getElementById("hangTable");
+    var lowerLetter = letter.toLowerCase()
+    var indices = [];
+    for (i = 0; i < word.length; i++) {
+        if (word[i] === lowerLetter) indices.push(i);
+    }
+    console.log(indices)
+    indices.forEach(index => wTable.rows[0].cells[index].innerHTML = letter);
 }
