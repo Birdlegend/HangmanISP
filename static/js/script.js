@@ -9,18 +9,15 @@ const getJSON = async url => {
 }
 console.log("fetching...");
 var word = ""
-var id = ""
-var category = ""
+var definition = ""
 var numLetters = 0
-getJSON("https://www.wordgamedb.com/api/v1/words/random").then(data => {
-    console.log(data);
-    word = data.word;
-    id = data._id;
-    category = data.category;
-    numLetters = data.numLetters;
+getJSON("https://random-words-api.vercel.app/word").then(data => {
+    console.log(data[0]);
+    word = data[0].word;
+    definition = data[0].definition;
+    numLetters = word.length;
     console.log(`look at this word: ${word}`);
-    console.log(`thats quite the id: ${id}`);
-    console.log(`thats really some category: ${category}`);
+    console.log(`so that's what that means: ${definition}`);
     console.log(`I wish I had that many letters: ${numLetters}`);
 })
 
