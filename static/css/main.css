@@ -103,6 +103,13 @@ button:active {
     margin-top: 0%;
 }
 
+#category {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-200%);
+}
+
 #hangTable {
     margin-left: 10%;
     transform: translateY(-30%);

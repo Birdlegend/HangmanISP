@@ -25,6 +25,9 @@ getJSON("https://www.wordgamedb.com/api/v1/words/random").then(data => {
 })
 
 window.onload = function() {
+word = "cheeser"
+category = "word"
+
 var aTable = document.getElementById("alphaTable");
     var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     for (i = 0; i < 13; i++) {
@@ -38,6 +41,7 @@ var aTable = document.getElementById("alphaTable");
         alpha2Cell.setAttribute("onclick", "letterSelection(this.innerHTML)");
     }
 setTimeout(() => {
+    document.getElementById("category").innerHTML = `category: ${category}`
 	var wTable = document.getElementById("hangTable");
 	for (i = 0; i < word.length; i++) {
 		var wordCell = wTable.rows[0].insertCell(word[i]);
@@ -55,4 +59,14 @@ function letterSelection(letter) {
     }
     console.log(indices)
     indices.forEach(index => wTable.rows[0].cells[index].innerHTML = letter);
+    var full = true
+    for (i = 0; i < wTable.rows[0].cells.length; i++) {
+        if (wTable.rows[0].cells[i].innerHTML == "") {
+            full = false
+            break
+        }
+    }
+    if (full == true) {
+        console.log("win")
+    }
 }
