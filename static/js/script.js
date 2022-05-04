@@ -13,7 +13,7 @@ var definition = ""
 var numLetters = 0
 getJSON("https://random-words-api.vercel.app/word").then(data => {
     console.log(data[0]);
-    word = data[0].word;
+    word = data[0].word.toLowerCase();
     definition = data[0].definition;
     numLetters = word.length;
     console.log(`look at this word: ${word}`);
@@ -22,9 +22,6 @@ getJSON("https://random-words-api.vercel.app/word").then(data => {
 })
 
 window.onload = function() {
-word = "cheeser"
-category = "word"
-
 var aTable = document.getElementById("alphaTable");
     var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     for (i = 0; i < 13; i++) {
@@ -44,7 +41,7 @@ setTimeout(() => {
 		var wordCell = wTable.rows[0].insertCell(word[i]);
 		wordCell.setAttribute("id", "hangCell");
     }
-}, "300");
+}, "500");
 }
 
 function letterSelection(letter) {
