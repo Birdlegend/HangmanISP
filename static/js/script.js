@@ -70,10 +70,10 @@ function letterSelection(letter) {
     sessionStorage.setItem('definition', definition);
     if (full == true) {
         incorrect = [];
-        window.location.replace("/win");
+        window.location.replace("./win");
     }
     if (incorrect.length == 7) {
         incorrect = [];
-        window.location.replace("/lose");
+        window.location.replace("./lose");
     }
 }

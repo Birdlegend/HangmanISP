@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9be6d1f-d1f1-4224-ace3-def3b6c6dbc9" name="Changes" comment="since the API is broken, I added a temporary fix">
-      <change afterPath="$PROJECT_DIR$/templates/lose.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/win.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hangman.py" beforeDir="false" afterPath="$PROJECT_DIR$/hangman.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/multiplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/multiplayer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/singleplayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/singleplayer.html" afterDir="false" />
-    </list>
+    <list default="true" id="e9be6d1f-d1f1-4224-ace3-def3b6c6dbc9" name="Changes" comment="created the actual game, minus the hanged man" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651547814648</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="created the actual game, minus the hanged man">
+      <created>1651729809213</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651729809214</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -132,6 +130,7 @@
     <MESSAGE value="created a table for the word, which will be the framework for the actual game." />
     <MESSAGE value="made alphabet table as well&#10;also centered the table" />
     <MESSAGE value="Table content is editable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Table content is editable" />
+    <MESSAGE value="created the actual game, minus the hanged man" />
+    <option name="LAST_COMMIT_MESSAGE" value="created the actual game, minus the hanged man" />
   </component>
 </project>
