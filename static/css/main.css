@@ -103,9 +103,10 @@ button:active {
     margin-top: 0%;
 }
 
-#category {
+#desc {
     position: absolute;
     width: 100%;
+    font-size: 30px;
     text-align: center;
     transform: translateY(-200%);
 }
@@ -130,12 +131,30 @@ button:active {
     transform: translateY(20%);
 }
 
+#letterFails {
+    position: static;
+    text-align: center;
+    font-size: 30px;
+    height: 1em;
+    margin: -0.5em;
+}
+
 #alphaCell {
     font-size: 40px;
     padding: 4px;
     background-color: rgb(242, 157, 157);
     width: 1em;
-    height: 50px;
+    height: 1.5em;
     border: 2px solid rgb(161, 104, 104);
     border-radius: 10px;
+    transition: all 0.25s;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: -10%;
+}
+
+#word {
+    position: relative;
 }

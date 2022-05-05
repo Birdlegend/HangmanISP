@@ -19,6 +19,13 @@ def singleplayer():
 def multiplayer():
     return render_template('multiplayer.html')
 
+@app.route("/win")
+def win():
+    return render_template('win.html')
+
+@app.route("/lose")
+def lose():
+    return render_template('lose.html')
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=(os.environ.get('VAPOR_LOCAL_PORT')))

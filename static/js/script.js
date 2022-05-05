@@ -35,23 +35,28 @@ var aTable = document.getElementById("alphaTable");
         alpha2Cell.setAttribute("onclick", "letterSelection(this.innerHTML)");
     }
 setTimeout(() => {
-    document.getElementById("category").innerHTML = `category: ${category}`
+    document.getElementById("desc").innerHTML = `Definition: ${definition}`
 	var wTable = document.getElementById("hangTable");
 	for (i = 0; i < word.length; i++) {
 		var wordCell = wTable.rows[0].insertCell(word[i]);
 		wordCell.setAttribute("id", "hangCell");
     }
-}, "500");
+}, "1000");
 }
 
+var incorrect = [];
 function letterSelection(letter) {
     var wTable = document.getElementById("hangTable");
-    var lowerLetter = letter.toLowerCase()
+    var lowerLetter = letter.toLowerCase();
     var indices = [];
     for (i = 0; i < word.length; i++) {
         if (word[i] === lowerLetter) indices.push(i);
     }
-    console.log(indices)
+    if (indices.length == 0) {
+        incorrect.push(letter);
+        var fails = document.getElementById("letterFails")
+        fails.innerHTML = fails.innerHTML + letter
+    }
     indices.forEach(index => wTable.rows[0].cells[index].innerHTML = letter);
     var full = true
     for (i = 0; i < wTable.rows[0].cells.length; i++) {
@@ -60,7 +65,15 @@ function letterSelection(letter) {
             break
         }
     }
+    console.log(incorrect)
+    sessionStorage.setItem('word', word);
+    sessionStorage.setItem('definition', definition);
     if (full == true) {
-        console.log("win")
+        incorrect = [];
+        window.location.replace("/win");
+    }
+    if (incorrect.length == 7) {
+        incorrect = [];
+        window.location.replace("/lose");
     }
 }
