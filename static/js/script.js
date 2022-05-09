@@ -1,21 +1,24 @@
-//JSON
+//Receives the JSON data from the given link
 const getJSON = async url => {
+    //waits for a response from the url
     const response = await fetch(url);
+    //if it never receives a response, it provides and Error
     if (!response.ok)
 	throw new Error(response.statusText);
 
-    const data = response.json();
+    const data = response.json(); //data is what is received from the JSON
     return data;
 }
 console.log("fetching...");
 var word = ""
 var definition = ""
 var numLetters = 0
+//first it receives the data from the link, then sets the json values equal to the variables above
 getJSON("https://random-word-hangman.herokuapp.com/word").then(data => {
     console.log(data[0]);
-    word = data[0].word.toLowerCase();
-    definition = data[0].definition;
-    numLetters = word.length;
+    word = data[0].word.toLowerCase(); //gives us a random word
+    definition = data[0].definition; //gives us the definition of the word
+    numLetters = word.length; //gives us the length of the word
     console.log(`look at this word: ${word}`);
     console.log(`so that's what that means: ${definition}`);
     console.log(`I wish I had that many letters: ${numLetters}`);
