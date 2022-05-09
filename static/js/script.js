@@ -56,9 +56,11 @@ function letterSelection(letter) {
         if (word[i] === lowerLetter) indices.push(i);
     }
     if (indices.length == 0) {
+	if (incorrect.includes(letter) === false) {
         incorrect.push(letter);
         var fails = document.getElementById("letterFails")
-        fails.innerHTML = fails.innerHTML + letter
+	    fails.innerHTML = fails.innerHTML + letter
+	}
     }
     indices.forEach(index => wTable.rows[0].cells[index].innerHTML = letter);
     var full = true

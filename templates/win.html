@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block body %}
-<h4>You Win!</h4>
-<a href="./"><button id="backHome"><span>Home</span></button></a>
+<h4>You Win!</h4> 
+<a href="./"><button id="backHome"><span>Home</span></button></a> <!-- redirects the user to the home page -->
 <h3 id="message">You learned a new word today!</h3>
 <h5 id="word"></h5>
-<script>document.getElementById("word").innerHTML = `${sessionStorage.getItem('word')}: ${sessionStorage.getItem('definition')}`</script>
+<script>document.getElementById("word").innerHTML = `${sessionStorage.getItem('word')}: ${sessionStorage.getItem('definition')}`</script> <!-- retrieves the word used from session storage -->
+<h6><a href="./singleplayer"><button id="button"><span>Retry?</span></button></a></h6> <!-- redirects the user to the singleplayer page -->
 {% endblock %}
