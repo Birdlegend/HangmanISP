@@ -11,7 +11,7 @@ console.log("fetching...");
 var word = ""
 var definition = ""
 var numLetters = 0
-getJSON("https://random-words-api.vercel.app/word").then(data => {
+getJSON("https://random-word-hangman.herokuapp.com/word").then(data => {
     console.log(data[0]);
     word = data[0].word.toLowerCase();
     definition = data[0].definition;
