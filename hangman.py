@@ -12,13 +12,9 @@ def help():
     return render_template('help.html')
 
 @app.route("/game")
-def singleplayer():
-<<<<<<< HEAD
-    return render_template('game.html')
-=======
-    return render_template('singleplayer.html')
->>>>>>> 01e0b6bac1ae269ccf24ac7e1a63d9c03d1d5522
-
+def game():
+        return render_template('game.html')
+    
 @app.route("/win")
 def win():
     return render_template('win.html')
