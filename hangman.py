@@ -11,13 +11,9 @@ def index():
 def help():
     return render_template('help.html')
 
-@app.route("/singleplayer")
+@app.route("/game")
 def singleplayer():
-    return render_template('singleplayer.html')
-
-@app.route("/multiplayer")
-def multiplayer():
-    return render_template('multiplayer.html')
+    return render_template('game.html')
 
 @app.route("/win")
 def win():
