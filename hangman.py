@@ -3,6 +3,7 @@ import os
 
 app = Flask(__name__)
 
+#these routes allow us to move the user to different files by using flask
 @app.route("/")
 def index():
     return render_template('index.html')
