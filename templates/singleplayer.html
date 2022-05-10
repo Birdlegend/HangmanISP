@@ -6,10 +6,11 @@
 
 {% block body %}
 <script>sessionStorage.clear()</script>
-<h4>Single Player</h4>
+<h4>Hangman</h4>
 <h5 id="desc"></h5>
 <a href="./"><button id="backHome"><span>Home</span></button></a>
 <table cellspacing="5" id="hangTable"><tr id="wordRow"></tr></table>
-<h5 id="letterFails"></h5>
+<p id="letterFails"></p>
+<p id="strikes">Strikes: 7</p>
 <table cellspacing="10" id="alphaTable"><tr id="firstHalf"></tr><tr id="secondHalf"></tr></table>
 {% endblock %}

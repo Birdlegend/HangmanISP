@@ -86,14 +86,14 @@ button:active {
   position: absolute;
   display: inline-block;
   margin-left: -80%;
-  margin-top: -25%;
+  margin-top: -15%;
 }
 
 #image {
     position: absolute;
     display: block;
-    margin-left: 38%;
-    margin-top: 0%;
+    margin-left: 43%;
+    margin-top: -10%;
 }
 
 #link {
@@ -138,6 +138,14 @@ button:active {
     font-size: 30px;
     height: 1em;
     margin: -0.5em;
+}
+
+#strikes {
+    vertical-align: text-top;
+    horizontal-align: text-right;
+    font-size: 30px;
+ /*   height: 1em;
+    margin: -0.5em; */
 }
 
 #alphaCell {

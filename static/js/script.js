@@ -23,10 +23,11 @@ getJSON("https://random-word-hangman.herokuapp.com/word").then(data => {
     console.log(`so that's what that means: ${definition}`);
     console.log(`I wish I had that many letters: ${numLetters}`);
 })
-
+//creates the table of letters
 window.onload = function() {
 var aTable = document.getElementById("alphaTable");
     var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    //creates each cell and makes them clickable
     for (i = 0; i < 13; i++) {
         var alpha1Cell = aTable.rows[0].insertCell(alphabet[12 - i]);
         alpha1Cell.innerHTML = alphabet[12 - i]
@@ -37,9 +38,12 @@ var aTable = document.getElementById("alphaTable");
         alpha2Cell.setAttribute("id", "alphaCell");
         alpha2Cell.setAttribute("onclick", "letterSelection(this.innerHTML)");
     }
-setTimeout(() => {
+    //waits for an API response
+    setTimeout(() => {
+	//displays the JSON definition
     document.getElementById("desc").innerHTML = `Definition: ${definition}`
 	var wTable = document.getElementById("hangTable");
+	//creates the table for the words based on the length of the word
 	for (i = 0; i < word.length; i++) {
 		var wordCell = wTable.rows[0].insertCell(word[i]);
 		wordCell.setAttribute("id", "hangCell");
@@ -48,22 +52,38 @@ setTimeout(() => {
 }
 
 var incorrect = [];
+var strikes = 7;
+//function for clicking letters
 function letterSelection(letter) {
     var wTable = document.getElementById("hangTable");
     var lowerLetter = letter.toLowerCase();
     var indices = [];
+    
+    //checks if letter is correct or not
     for (i = 0; i < word.length; i++) {
         if (word[i] === lowerLetter) indices.push(i);
     }
+
+    //if the letter is incorrect
     if (indices.length == 0) {
 	if (incorrect.includes(letter) === false) {
         incorrect.push(letter);
-        var fails = document.getElementById("letterFails")
-	    fails.innerHTML = fails.innerHTML + letter
+            var fails = document.getElementById("letterFails")
+	    if (incorrect.length === 1) {
+		//creates the list of incorrect letters
+		fails.innerHTML = `Incorrect: ${letter}`;
+	    } else {
+		//updates the list of incorrect letters
+		fails.innerHTML = `Incorrect: ${(fails.innerHTML + letter).substr(11)}`;
+	    }
+	    //updates the number of strikes the player has left
+	    strikes -= 1;
+	    document.getElementById("strikes").innerHTML = `Strikes: ${strikes}`;
 	}
     }
     indices.forEach(index => wTable.rows[0].cells[index].innerHTML = letter);
     var full = true
+    //checks to see if any cells are empty
     for (i = 0; i < wTable.rows[0].cells.length; i++) {
         if (wTable.rows[0].cells[i].innerHTML == "") {
             full = false
@@ -71,14 +91,21 @@ function letterSelection(letter) {
         }
     }
     console.log(incorrect)
+    //saves the word to session storage
     sessionStorage.setItem('word', word);
+    //saves the definition to session storage
     sessionStorage.setItem('definition', definition);
+
+    //if all letters are guessed
     if (full == true) {
         incorrect = [];
+	//triggers win screen
         window.location.replace("./win");
     }
+    //if not all the letters are guessed
     if (incorrect.length == 7) {
         incorrect = [];
+	//triggers game over screen
         window.location.replace("./lose");
     }
 }
