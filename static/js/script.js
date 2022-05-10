@@ -14,15 +14,17 @@ var word = ""
 var definition = ""
 var numLetters = 0
 //first it receives the data from the link, then sets the json values equal to the variables above
-getJSON("https://random-word-hangman.herokuapp.com/word").then(data => {
-    console.log(data[0]);
-    word = data[0].word.toLowerCase(); //gives us a random word
-    definition = data[0].definition; //gives us the definition of the word
-    numLetters = word.length; //gives us the length of the word
-    console.log(`look at this word: ${word}`);
-    console.log(`so that's what that means: ${definition}`);
-    console.log(`I wish I had that many letters: ${numLetters}`);
-})
+function loadData() {
+    return getJSON("https://random-word-hangman.herokuapp.com/word").then(data => {
+        console.log(data[0]);
+        word = data[0].word.toLowerCase(); //gives us a random word
+        definition = data[0].definition; //gives us the definition of the word
+        numLetters = word.length; //gives us the length of the word
+        console.log(`look at this word: ${word}`);
+        console.log(`so that's what that means: ${definition}`);
+        console.log(`I wish I had that many letters: ${numLetters}`);
+    })
+}
 //creates the table of letters
 window.onload = function() {
 var aTable = document.getElementById("alphaTable");
@@ -38,18 +40,20 @@ var aTable = document.getElementById("alphaTable");
         alpha2Cell.setAttribute("id", "alphaCell");
         alpha2Cell.setAttribute("onclick", "letterSelection(this.innerHTML)");
     }
-    //waits for an API response
-    setTimeout(() => {
+    }
+//waits for an API response
+loadData().then(function(){
 	//displays the JSON definition
     document.getElementById("desc").innerHTML = `Definition: ${definition}`
 	var wTable = document.getElementById("hangTable");
 	//creates the table for the words based on the length of the word
 	for (i = 0; i < word.length; i++) {
-		var wordCell = wTable.rows[0].insertCell(word[i]);
+	    var wordCell = wTable.rows[0].insertCell(word[i]);
 		wordCell.setAttribute("id", "hangCell");
     }
-}, "1000");
-}
+}).catch(function(err){
+console.log(err)
+})
 
 var incorrect = [];
 var strikes = 7;
