@@ -15,10 +15,6 @@ def help():
 def singleplayer():
     return render_template('singleplayer.html')
 
-@app.route("/multiplayer")
-def multiplayer():
-    return render_template('multiplayer.html')
-
 @app.route("/win")
 def win():
     return render_template('win.html')
