@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9be6d1f-d1f1-4224-ace3-def3b6c6dbc9" name="Changes" comment="removed the static timer">
+    <list default="true" id="e9be6d1f-d1f1-4224-ace3-def3b6c6dbc9" name="Changes" comment="minor upgrade">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/lose.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lose.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/game.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652159688523</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="minor upgrade">
+      <created>1652669010391</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1652669010391</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -158,6 +164,7 @@
     <MESSAGE value="created the actual game, minus the hanged man" />
     <MESSAGE value="fixed the redirects for vapor i think" />
     <MESSAGE value="removed the static timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed the static timer" />
+    <MESSAGE value="minor upgrade" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor upgrade" />
   </component>
 </project>

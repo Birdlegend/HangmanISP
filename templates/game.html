@@ -14,17 +14,35 @@
 <p id="strikes">Strikes: 7</p>
 <table cellspacing="10" id="alphaTable"><tr id="firstHalf"></tr><tr id="secondHalf"></tr></table>
 <script>
-    window.addEventListener("keydown", function (event) {
-  if (event.defaultPrevented) {
-    return; // Do nothing if the event was already processed
-  }
+//Cheater detector
+var messageList = ["cheater", "go away", "you shouldn't be here", "you suck", "why don't you inspect some women instead"]
+var listNum = 0
+var element = ""
+var devtoolsOpen = false;
+element.__defineGetter__("id", function() {
+    devtoolsOpen = true;
+    });
+setInterval(function() {
+    if (listNum < 5) {
+    devtoolsOpen = false;
+    console.log(messageList[listNum % messageList.length])
+    listNum += 1;
+    }
+}, 1000);
 
-  if (event.keyCode >= 65 && event.keyCode <= 90) {
-  letterSelection(event.key);
-}
-
-  // Cancel the default action to avoid it being handled twice
-  event.preventDefault();
+//Lets the window detect keypresses
+window.addEventListener("keydown", function (event) {
+    var map = {}; // You could also use an array
+    if (event.defaultPrevented) {
+        return; // Do nothing if the event was already processed
+    }
+    if (event.keyCode >= 65 && event.keyCode <= 90) {
+         letterSelection(event.key);
+    }
+    // Cancel the default action to avoid it being handled twice
+    event.preventDefault();
 }, true);
+
+
 </script>
 {% endblock %}
