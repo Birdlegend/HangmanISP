@@ -5,9 +5,15 @@
 {% endblock %}
 
 {% block body %}
-<h4>Loser.</h4>
+<h4 id="title">Loser.</h4>
+<script>
+    const messageList = ["Loser.", "Invest in a dictionary.", "Fail.", "You should find an easier game.", "You suck at this."];
+    var loseTitle = messageList[Math.floor(Math.random() * messageList.length)];
+    document.getElementById("title").innerHTML = loseTitle;
+</script>
 <a href="./"><button id="backHome"><span>Home</span></button></a> <!-- redirects the user to the home page -->
 <h3 id="message">You don't know this word?</h3>
+
 <h5 id="word"></h5>
 <script>document.getElementById("word").innerHTML = `${sessionStorage.getItem('word')}: ${sessionStorage.getItem('definition')}`</script> <!-- retrieves the word used from session storage -->
 <h6><a href="./game"><button id="button"><span>Retry?</span></button></a></h6> <!-- redirects the user to the singleplayer page -->
